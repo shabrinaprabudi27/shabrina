@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,100&display=swap');
+:root{
+    --warna1:#CD0085;
+    --warna2:#B8039D;
+    --warna3:#9000A2;
+    --warna4:#530769;
+    --warna5:#1E041C;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: #ffff;
+}
+
+body{
+    background-color: var(--warna5);
+    overflow-x: hidden;
+}
+
+.navbar{
+    width: 100%;
+    padding: 10px;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #530769;
+}
+
+
+.navbar .nav-icon{
+    width: 70%;
+}
+
+.navbar .nav-menu{
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar .nav-menu a:hover{
+    color: var(--warna1);
+}
+
+.humberger{
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+    display: none;
+    position: relative;
+}
+
+.humberger span{
+    display: block;
+    width: 30px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #ffff;
+    margin: 5px;
+    z-index: 1;
+}
+
+.humberger input[type="checkbox"]{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.home,
+.about{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-top: 50px;
+
+}
+
+
+
+
+.home .home-img,
+.about .about-img{
+    width: 100%;
+    padding: 20px; 
+    
+}
+
+.home-img img,.about-img img{
+    width: 100%;
+    height: 50vh;
+}
+
+
+
+.home .home-desc,.about .about-desc{
+    width: 50%;
+    padding: 10px;
+    text-align: left;
+    
+}
+
+
+
+.home .home-desc a,
+.about .about-desc a,
+.Project .btn-lainnya{
+    padding: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    border-radius: 20px;
+    background: linear-gradient(to right,var(--warna2),var(--warna4));
+    
+}
+
+.Project{
+    width: 100%;
+    padding: 20px;
+
+/* padding buat jarak antara dari induknya ke anaknya/ ngasih jarak atau dalam  */
+/* margin itu antara jarak diluar border  */
+}
+
+.Project-title{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Project h2,
+.Project h1, 
+.contact-title{
+    text-align: center;
+}
+
+.container{
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Project .container .Project-img{
+    width: 40%;
+}
+
+.Project .container .Project-img img{
+    width: 100%;
+    height: 40vh;
+
+}
+
+.skill{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.skill .skill-img{
+    width: 10%;
+    height: 15vh;
+}
+
+.skill .skill-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.Contact{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.Contact .Contact1{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.Contact .Contact1:nth-child(1) .Contact1-img{
+    display: flex;  
+    align-items: center;
+}
+
+.Contact .Contact1:nth-child(1) .Contact1-img p{
+   margin-left: 10px;
+}
+
+iframe{
+    width: 35%;
+    height: 30vh;
+ }
+
+ footer {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* ukuran tablet */
+@media(max-width: 768px){
+    .navbar .nav-menu{
+        width: 40vw;
+        position: fixed;
+        top: 7%;
+        bottom: 0;
+        right: 0;
+        padding: 10px;
+        background-color: rgba(83, 7, 105, .8);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transform: scaleY(0);
+        transition: 0.8s;
+    }
+    .navbar .nav-menu a{
+        margin: 10px 0;
+    }
+
+    .humberger{
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-menu.active{
+        transform: scaleY(1);
+    }
+ 
+    .home,.about, .Project .container{
+        flex-direction: column;
+        align-items: center; 
+    }
+    
+    .home .home-img,.about .about-img,.Project .container .Project-img {
+        width: 70%;
+        margin-bottom: 20px;
+    }
+
+    .home .home-img img, .about .about-img img{
+        height: 40vh;
+    }
+    
+    .home .home-desc, .about .about-desc,.Project .container .Project-desc{
+        width: 70%;
+    }
+}
+
+@media(max-width:567px){
+    .navbar .nav-menu{
+        width:50vw;
+    }
+}
